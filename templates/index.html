@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular Disease Prediction</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("../static/doc.jpg");
+            font-family: 'poppins';
+            margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+        }
+
+        #container {
+            max-width: 45%;
+            margin: 0 auto;
+            padding: 20px;
+           
+        }
+        .form-wrap{
+    background-color: #fff;
+    opacity: 0.9;
+    padding:15px 25px;
+    border-radius: 5px;
+    color: #333;
+    border-top: 4px solid green;
+}
+.form-wrap h1, p{
+    text-align: center;
+}
+.form-wrap .form-group label{
+    display:block;
+    color: black;
+}
+.form-group input{
+    width:100%;
+    padding:10px;
+    border:1px solid black;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    font-family: 'poppins';
+}
+.form-group select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    font-family: 'poppins';           
+}
+.form-wrap button{
+    display: block;
+    width: 100%;
+    background-color: rgb(27, 224, 191);
+    border:1px solid rgb(27, 224, 191);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    color:white;
+    cursor: pointer;
+    font-family: 'poppins'; 
+    font-size: 15px;
+    transition: 0.2s;
+}
+.form-wrap button:hover{
+    background-color: rgb(209, 109, 220);
+    border:1px solid rgb(209, 109, 220);
+    transition: 0.5s;
+}
+.bottom-text {
+    font-size: 15px;
+    margin-top: 10px;
+}
+.bottom-text a{
+    color:rgb(31, 162, 206);
+}
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="form-wrap">
+            <h1 class="heading">HeartGuard</h1>
+            <p>Embrace Life, Embrace Health: Nurturing Hearts, Building Futures</p>
+            <form method="post">
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="height">Height (cm):</label>
+                    <input type="number" id="height" name="height" required>
+                </div>
+                <div class="form-group">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" name="weight" required>
+                </div>
+                <div class="form-group">
+                    <label for="ap_hi">Systolic blood pressure:</label>
+                    <input type="number" id="ap_hi" name="ap_hi" required>
+                </div>
+                <div class="form-group">
+                    <label for="ap_lo">Diastolic blood pressure:</label>
+                    <input type="number" id="ap_lo" name="ap_lo" required>
+                </div>
+                <div class="form-group">
+                    <label for="cholesterol">Cholesterol level:</label>
+                    <select id="cholesterol" name="cholesterol">
+                        <option value="Normal">Normal</option>
+                        <option value="Above normal">Above normal</option>
+                        <option value="Well above normal">Well above normal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="gluc">Glucose level:</label>
+                    <select id="gluc" name="gluc">
+                        <option value="Normal">Normal</option>
+                        <option value="Above normal">Above normal</option>
+                        <option value="Well above normal">Well above normal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="smoke">Are you a Smoker?</label>
+                    <select id="smoke" name="smoke">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="alco">Do you drink alcohol often?</label>
+                    <select id="alco" name="alco">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="active">Do you exercise at least 3 times a week?</label>
+                    <select id="active" name="active">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <button type="submit" value="predict">Predict</button>
+                <p class="bottom-text">By Clicking the sign up button, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a> </p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

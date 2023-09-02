@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular Disease Prediction Result</title>
+    <link rel="stylesheet" href="../static/style.css">
+   <style>
+
+.container {
+  background-color: aliceblue;
+  opacity: 0.9;
+  margin: 100px auto;
+   max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.heading {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.prediction {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.links-section {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.links-section h2 {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.links-section p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.links-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-section li {
+    margin-bottom: 10px;
+}
+
+.links-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links-section a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+   </style>
+</head>
+
+<body>
+    <div id="resultContainer">
+    <div class="container" id="resultBox">
+        <h1 class="heading">Prediction Result</h1>
+        <h2 class="prediction">
+            {% if prediction == 0 %}
+            You will not have Cardiovascular Disease !!!😊
+            {% else %}
+            Probably you will have Cardiovascular Disease in the future !!!😞
+            {% endif %}
+        </h2>
+        <div class="links-section">
+            <h2>Recommended Resources:</h2>
+            {% if prediction == 0 %}
+            <p>Stay proactive in maintaining a healthy lifestyle. Here are some health tips:</p>
+            <ul>
+            
+                <li><a href="https://www.everydayhealth.com/heart-disease/treatment-prevention/"  target="_blank">Tips for Preventing Heart Disease</a></li>
+                <li><a href="https://intermountainhealthcare.org/blogs/topics/heart/2019/02/6-best-exercises-to-strengthen-your-heart/" target="_blank">Exercises to Improve Cardiovascular Health</a></li>
+                <li><a href="https://www.beaumont.org/health-wellness/blogs/top-ways-to-reduce-stress-and-save-your-heart" target="_blank">Stress Management Techniques</a></li>
+            </ul>
+            {% else %}
+            <p>Learn more about cardiovascular disease and how to manage it:</p>
+            <ul>
+                <li><a href="https://www.mayoclinic.org/diseases-conditions/coronary-artery-disease/diagnosis-treatment/drc-20350619" target="_blank">Understanding Cardiovascular Disease</a></li>
+                <li><a href="https://www.nhs.uk/conditions/coronary-heart-disease/treatment/" target="_blank">Treatment for Coronary Heart Disease</a></li>
+                <li><a href="https://www.nhs.uk/conditions/coronary-heart-disease/prevention/" target="_blank">Preventive Measures and Lifestyle Changes</a></li>
+            </ul>
+            {% endif %}
+        </div>
+        <a href="{{ url_for('index') }}" class="button">Home</a>
+    </div>
+</div>
+<script>
+    const imageURL = "{% if prediction == 0 %}../static/healthyheart.jpg{% else %}../static/cardio.jpg{% endif %}";
+    document.body.style.backgroundImage = `url(${imageURL})`;
+
+   
+</script>
+</body>
+</html>
