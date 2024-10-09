@@ -55,4 +55,4 @@ def predict_note_authentication(input_data):
     return prediction[0]
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)
